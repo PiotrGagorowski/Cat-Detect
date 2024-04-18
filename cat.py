@@ -18,7 +18,7 @@ def process_image(image_path):
     for (x, y, w, h) in faces:
         cv2.rectangle(img, (x, y), (x+w, y+h), (255, 255, 0), 2)
         
-    cv2.imshow('img', img)
+    cv2.imshow('Detektor', img)
     key = cv2.waitKey(0)
     if key == 27:  # Naciśnięcie ESC zakończy wyświetlanie zdjęć
         return False
