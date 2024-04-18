@@ -4,7 +4,7 @@ import os
 cascade = cv2.CascadeClassifier('haarcascade_frontalcatface.xml')
 
 # Ścieżka do folderu zawierającego zdjęcia kotów
-folder_path = 'C:/Users/Piotr G/Desktop/koty/Cat-Detect/Psy4000/archive/dataset/test_set/cats'
+folder_path = 'C:/Users/sylwi/OneDrive/Dokumenty/GitHub/Cat-Detect/Datasets'
 
 # Lista plików w folderze
 image_files = os.listdir(folder_path)
