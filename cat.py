@@ -5,7 +5,7 @@ cascade = cv2.CascadeClassifier('haarcascade_frontalcatface.xml')
 cascade_dog = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
 
 # Ścieżka do folderu zawierającego zdjęcia kotów
-folder_path = 'C:/Users/kakit/Documents/GitHub/Cat-Detect/Datasets'
+folder_path = 'C:/Users/sylwi/OneDrive/Dokumenty/GitHub/Cat-Detect/Datasets'
 
 # Lista plików w folderze
 image_files = os.listdir(folder_path)

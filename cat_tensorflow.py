@@ -60,7 +60,7 @@ def classify_image(image_path):
     return True
 
 # Przetwarzanie wszystkich obrazów z folderu
-folder_path = 'C:/Users/kakit/Documents/GitHub/Cat-Detect/Datasets'
+folder_path = 'C:/Users/sylwi/OneDrive/Dokumenty/GitHub/Cat-Detect/Datasets'
 image_files = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith('.jpg')]
 
 for image_file in image_files:
