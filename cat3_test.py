@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import recall_score
+from sklearn.metrics import recall_score,  precision_score
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
@@ -45,17 +45,21 @@ for image_path in selected_images:
         plt.axis('off')
         plt.show()
 
-#for image_path in test_images:  # Iteruja po całym zbiorze testowym w celu wyliczenia mertryki recall
- #   img = load_and_process_image(image_path)
-  #  if img is not None:
-   #     prediction = model.predict(img)
-    #    predictions.append(prediction)
+for image_path in test_images:  # Iteruja po całym zbiorze testowym w celu wyliczenia mertryki recall
+    img = load_and_process_image(image_path)
+    if img is not None:
+        prediction = model.predict(img)
+        predictions.append(prediction)
 
-# Wyliczenie recall
-#true_labels = [0] * len(cat_images) + [1] * len(dog_images)  # 0 = kot, 1 = psies
+# Wyliczenie precision i recall
+true_labels = [0] * len(cat_images) + [1] * len(dog_images)  # 0 = kot, 1 = psies
 
 # Usunięcie nadmiarowych przewidywanych etykiet
-#predicted_labels = [0 if pred < 0.5 else 1 for pred in predictions][:len(true_labels)]
+predicted_labels = [0 if pred < 0.5 else 1 for pred in predictions][:len(true_labels)]
 
-#recall = recall_score(true_labels, predicted_labels)
-#print(f"Recall: {recall}")
+precision = precision_score(true_labels, predicted_labels)
+recall = recall_score(true_labels, predicted_labels)
+
+print(f"Matryka precision: {precision:.3f}")
+print(f"Metryka recall: {recall:.3f}")
+
