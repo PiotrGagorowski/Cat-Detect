@@ -45,11 +45,12 @@ for image_path in selected_images:
         plt.axis('off')
         plt.show()
 
-for image_path in test_images:  # Iteruja po całym zbiorze testowym w celu wyliczenia mertryki recall
-    img = load_and_process_image(image_path)
-    if img is not None:
-        prediction = model.predict(img)
-        predictions.append(prediction)
+# Iteruja po całym zbiorze testowym w celu wyliczenia mertryki recall
+for image_path in test_images:  
+     img = load_and_process_image(image_path)
+     if img is not None:
+         prediction = model.predict(img)
+         predictions.append(prediction)
 
 # Wyliczenie precision i recall
 true_labels = [0] * len(cat_images) + [1] * len(dog_images)  # 0 = kot, 1 = psies
